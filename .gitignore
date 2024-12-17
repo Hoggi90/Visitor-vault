@@ -1,13 +1,4 @@
-# Ignore system files and editor settings
 .DS_Store
-
-# Ignore the env folder in the backend
-backend/env/
-
-# Ignore .env files
-.env
-
-# Ignore Terraform state files and lock file
 terraform/.terraform/
 terraform/.terraform.lock.hcl
 terraform/terraform.tfstate*
