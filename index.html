@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Form</title>
+</head>
+<body>
+    <h1>Welcome to Visitor Vault</h1>
+    <p>Please enter your details below:</p>
+
+    <form id="visitorForm">
+        <!-- Name Input -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+
+        <!-- Location Input -->
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location" placeholder="Enter your location" required><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('visitorForm').addEventListener('submit', async function(e) {
+            e.preventDefault(); // Prevent the default form behavior (reload page)
+
+            // Collect input values
+            const name = document.getElementById('name').value;
+            const location = document.getElementById('location').value;
+
+            try {
+                // Placeholder: Send data to your API Gateway (replace YOUR_API_ENDPOINT)
+                const response = await fetch('https://YOUR_API_ENDPOINT', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, location }),
+                });
+
+                if (response.ok) {
+                    // On success, redirect to results.html
+                    window.location.href = 'results.html';
+                } else {
+                    // Handle any errors (optional)
+                    alert('Failed to submit data. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
