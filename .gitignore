@@ -12,5 +12,3 @@ terraform/.terraform/
 terraform/.terraform.lock.hcl
 terraform/terraform.tfstate*
 
-# Ignore the private key file
-weather-key.pem
