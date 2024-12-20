@@ -12,7 +12,7 @@ variable "db_user" {
 }
 
 variable "db_password" {
-  default = "admin123" # Replace with a secure password
+  default = "Generation2024" # Replace with a secure password
 }
 
 variable "s3_bucket_name" {
