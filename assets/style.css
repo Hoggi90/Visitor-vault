@@ -1,0 +1,62 @@
+body {
+    background-color: #007bff;
+}
+
+.main {
+    background-color: aqua;
+    padding: 15px;
+}
+
+.navbar {
+    padding: 10px;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: right;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+    margin-right: 30px;
+}
+.heading {
+    margin: 0 50px 0 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin: 20px auto;
+  width: 50%;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+input[type="text"], button {
+  margin: 10px 0;
+  padding: 10px;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
