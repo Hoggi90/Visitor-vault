@@ -7,9 +7,9 @@ provider "aws" {
 resource "aws_db_instance" "visitor_rds" {
   allocated_storage    = 20
   engine               = "mysql"
-  engine_version       = "8.0"
-  instance_class       = "db.t2.micro"
-  name                 = "visitorvaultdb"
+  engine_version       = "8.4"
+  instance_class       = "db.t3.micro"
+  db_name              = "visitorvaultdb"
   username             = "admin"
   password             = "Generation2024" 
   publicly_accessible  = true
@@ -49,11 +49,11 @@ resource "aws_lambda_function" "visitor_lambda" {
   role             = aws_iam_role.lambda_role.arn
   handler          = "lambda_function.lambda_handler"
   timeout          = 15
-  filename         = "lambda_function.zip" # Upload your Lambda function as a ZIP file
+  filename         = "./lambda/lambda_function.zip" # Upload your Lambda function as a ZIP file
   environment {
     variables = {
       DB_HOST     = aws_db_instance.visitor_rds.address
-      DB_NAME     = aws_db_instance.visitor_rds.name
+      DB_NAME     = aws_db_instance.visitor_rds.db_name
       DB_USER     = aws_db_instance.visitor_rds.username
       DB_PASSWORD = aws_db_instance.visitor_rds.password
     }
@@ -75,7 +75,7 @@ resource "aws_apigatewayv2_integration" "lambda_integration" {
 resource "aws_apigatewayv2_route" "post_route" {
   api_id    = aws_apigatewayv2_api.visitor_api.id
   route_key = "POST /submit"
-  target    = aws_apigatewayv2_integration.lambda_integration.id
+  target    = "integrations/${aws_apigatewayv2_integration.lambda_integration.id}"
 }
 
 resource "aws_apigatewayv2_stage" "default_stage" {
