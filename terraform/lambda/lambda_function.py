@@ -1,4 +1,5 @@
 import pymysql
+import json
 import os
 
 def lambda_handler(event, context):
@@ -9,17 +10,28 @@ def lambda_handler(event, context):
     db_name = os.environ['DB_NAME']
     
     # Parse the incoming form data from API Gateway
-    body = event.get("body", {})
-    if isinstance(body, str):
-        body = eval(body)  # Convert stringified JSON into a Python dictionary
-    
-    name = body.get("name")
-    location = body.get("location")
+    try:
+        body = json.loads(event.get("body", "{}"))  # Safely parse JSON
+        name = body.get("name")
+        location = body.get("location")
 
-    if not name or not location:
+        if not name or not location:
+            return {
+                "statusCode": 400,
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                },
+                "body": json.dumps({"error": "Missing 'name' or 'location' in request"})
+            }
+    except json.JSONDecodeError:
         return {
             "statusCode": 400,
-            "body": "Missing 'name' or 'location' in request"
+            "headers": {
+                "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                },
+            "body": json.dumps({"error": "Invalid JSON format"})
         }
 
     try:
@@ -40,14 +52,21 @@ def lambda_handler(event, context):
 
         return {
             "statusCode": 200,
-            "body": "Data saved successfully!"
+            "headers": {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+            },
+            "body": json.dumps({"message": "Data saved successfully!"})
         }
     except Exception as e:
         print(f"Error: {e}")
         return {
             "statusCode": 500,
-            "body": "Error saving data"
+            "headers": {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+            },
+            "body": json.dumps({"error": "Error saving data", "details": str(e)})
         }
     finally:
-        if connection:
-            connection.close()
+        connection.close()
