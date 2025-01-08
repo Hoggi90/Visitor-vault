@@ -1,3 +1,4 @@
+// Handle the form submission
 document.getElementById("visitorForm").addEventListener("submit", async function (e) {
     e.preventDefault(); // Prevent form from submitting normally
 
@@ -5,7 +6,7 @@ document.getElementById("visitorForm").addEventListener("submit", async function
     const location = document.getElementById("location").value;
 
     try {
-        const response = await fetch('YOUR_API_ENDPOINT', {
+        const response = await fetch('https://h9v6coissi.execute-api.eu-west-2.amazonaws.com/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
