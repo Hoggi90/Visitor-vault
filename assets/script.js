@@ -5,7 +5,7 @@ document.getElementById("visitorForm").addEventListener("submit", async function
     const location = document.getElementById("location").value;
 
     try {
-        const response = await fetch('https://z2spe7xf12.execute-api.eu-west-2.amazonaws.comOUR_API_ENDPOINT', {
+        const response = await fetch('https://6qwl9hlczg.execute-api.eu-west-2.amazonaws.com/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
