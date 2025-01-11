@@ -1,0 +1,67 @@
+map.html:
+
+<!DOCTYPE html>
+<html lang="en">
+
+results.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="results.html">The Vault</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html">Log in</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <h1>Visitor Vault - The Vault</h1>
+        <p>See where other visitors have left their mark!</p>
+        <ul id="visitorsList"><!-- DO NOT CHANGE THIS ID NAME -->
+            <!-- Visitor data will be inserted here -->
+            <!-- You can edit the class tag "li" in CSS-->
+        </ul>
+    </div>
+    <script src="./assets/results.js"></script>
+</body>
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Interactive World Map</h1>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([0, 0], 2); // Center at [latitude, longitude] with zoom level 2
+
+        // Add a tile layer (Map appearance)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+        }).addTo(map);
+    </script>
+</body>
+
+</html>
