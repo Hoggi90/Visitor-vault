@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Vault: The Globe</title>
+  
+  <!-- Link to CSS file for this page -->
+  <link rel="stylesheet" href="assets/Inside-vault.css" />
+  
+  <!-- Load Three.js library (required by three-globe) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Load Globe.js library -->
+  <script src="https://unpkg.com/three-globe@2.39.1/dist/three-globe.min.js"></script>
+
+  <!-- Check if Globe.js is loaded -->
+  <script>
+    // Check if Globe.js is properly loaded
+    window.onload = function() {
+      if (typeof Globe !== "undefined") {
+        console.log("Globe.js loaded:", typeof Globe);  // Should log "function"
+      } else {
+        console.error("Globe.js library failed to load.");
+      }
+    };
+  </script>
+
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-items">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a href="results.html">The Vault</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="index.html">Log in</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Globe container -->
+  <div id="globe-container"></div>
+
+  <!-- Initialize and create the globe -->
+  <script>
+    // Ensure that both three.js and three-globe have loaded
+    window.onload = function() {
+      if (typeof Globe !== "undefined") {
+        const globe = new Globe()
+          .globeImageUrl("assets/Inside-Vault-background.jpg")  // Path to your vault background image
+          .bubblesData([
+            { lat: 37.7749, lng: -122.4194, size: 0.1, color: 'red' },  // San Francisco
+            { lat: 51.5074, lng: -0.1278, size: 0.1, color: 'blue' }   // London
+          ])
+          .bubblesVisible(true)
+          .onGlobeReady(() => console.log("Globe is ready!"));
+
+        document.getElementById("globe-container").appendChild(globe);
+      } else {
+        console.error("Globe.js library failed to load.");
+      }
+    };
+  </script>
+</body>
+</html>

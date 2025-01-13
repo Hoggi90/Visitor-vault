@@ -1,5 +1,3 @@
-* Visitor Vault Styling */
-
 /* General Reset */
 * {
   margin: 0;
@@ -7,8 +5,9 @@
   box-sizing: border-box;
 }
 
+/* Body styling */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
   background: linear-gradient(120deg, #d1e8e2, #ffffff);
   color: #333;
@@ -56,6 +55,7 @@ header {
   border-radius: 5px;
 }
 
+/* Banner Styling */
 .banner {
   display: flex;
   align-items: center;
@@ -67,47 +67,22 @@ header {
 
 .banner img {
   width: auto;
-  max-width: 100%;
+  max-width: 150px; 
   height: auto;
-  display: block;
-  margin: 0 auto;
 }
 
-.banner h1 {
-  color: white;
-  font-size: 2.5rem;
-  letter-spacing: 1.2px;
-}
-
+/* Main content */
 .main {
-  text-align: center;
-  padding: 2rem;
-  background: url('./New-Vault.jpg') center center no-repeat;
-  background-size: cover;
-  color: white;
-}
-
-.home {
   text-align: center;
   padding: 2rem;
   background: url('./vault-background.jpg') center center no-repeat;
   background-size: cover;
-  color: white; 
-}
-
-/* AFRIKA USE THIS PART FOR THE ACTUAL VAULT PAGE- YOU CAN CHANGE BACKGROUND */
-.Vault {
-  text-align: center;
-  padding: 2rem;
-  background: url('./Inside-Vault-background.jpg') center center no-repeat;
-  background-size: cover;
-  color: white;
+  color: rgb(255, 255, 255); 
 }
 
 /* Heading styles */
-/* About Us & Contact Us Pages */
 .heading h1 {
-  color: #ffffff;
+  color: #fff;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -121,7 +96,6 @@ header {
   margin-right: auto; /* Center align */
 }
 
-/* "Visitor Vault: Your digital passport to the world" -HOME PAGE */
 .heading h2 {
   color: #fff;
   font-size: 2.5rem;
@@ -138,21 +112,10 @@ header {
 }
 
 .heading p {
-  color: #fff;
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 2rem;
-  padding: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
-  border-radius: 10px; 
-  background: rgba(0, 0, 0, 0.8); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Same shadow effect as the form */
-  text-align: center;
-  max-width: 600px; 
-  margin-left: auto; /* Center align */
-  margin-right: auto; /* Center align */
 }
-
 
 /* Form Styling */
 form {
@@ -192,4 +155,13 @@ button {
 
 button:hover {
   background: #ffe680;
+}
+
+/* Footer (optional for spacing consistency) */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0b3d91;
+  color: white;
+  margin-top: 2rem;
 }
