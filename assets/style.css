@@ -18,7 +18,7 @@ body {
 
 /* Navbar styling */
 header {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  background-color: black;
   padding: 15px 0;
   position: fixed;
   width: 100%;
@@ -31,6 +31,12 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
+}
+
+.logo, img {
+  height: 60px;
+  width: auto;
 }
 
 .nav-items {
@@ -77,20 +83,22 @@ header {
   color: white;
   font-size: 2.5rem;
   letter-spacing: 1.2px;
+  height: 20%;
 }
 
 .main {
   text-align: center;
   padding: 2rem;
-  background: url('./New-Vault.jpg') center center no-repeat;
+  background: url('./images/vault-background.jpg') center center no-repeat;
   background-size: cover;
   color: white;
+  height: 1000px;
 }
 
 .home {
   text-align: center;
   padding: 2rem;
-  background: url('./vault-background.jpg') center center no-repeat;
+  background: url('./images/vault-background.jpg') center center no-repeat;
   background-size: cover;
   color: white; 
 }
@@ -99,7 +107,7 @@ header {
 .Vault {
   text-align: center;
   padding: 2rem;
-  background: url('./Inside-Vault-background.jpg') center center no-repeat;
+  background: url('./images/stars-background.jpg') center center no-repeat;
   background-size: cover;
   color: white;
 }
