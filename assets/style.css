@@ -14,6 +14,7 @@ body {
   color: #333;
   padding: 0;
   margin: 0;
+  padding-top: 90px;
 }
 
 /* Navbar styling */
@@ -93,6 +94,18 @@ header {
   background-size: cover;
   color: white;
   height: 1000px;
+  position: relative;
+}
+
+
+.main .content {
+  margin-top: 100px; 
+  position: relative; 
+}
+
+#map .content {
+  margin-top: 100px; 
+  position: relative; 
 }
 
 .home {
@@ -151,13 +164,13 @@ header {
   line-height: 1.8;
   margin-bottom: 2rem;
   padding: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+  border: 2px solid rgba(255, 255, 255, 0.5); 
   border-radius: 10px; 
   background: rgba(0, 0, 0, 0.8); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Same shadow effect as the form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
   text-align: center;
   max-width: 600px; 
-  margin-left: auto; /* Center align */
+  margin-left: auto;
   margin-right: auto; /* Center align */
 }
 
@@ -200,4 +213,78 @@ button {
 
 button:hover {
   background: #ffe680;
+}
+
+.contact-section {
+  text-align: center;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.contact-section h1 {
+  font-size: 2.5em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.contact-card-container {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 20px; 
+}
+
+.contact-card {
+  background-color: rgba(0, 0, 0, 0.8); 
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 350px; 
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  flex: 1 1 calc(33.333% - 40px); 
+  box-sizing: border-box; 
+  text-align: left;
+}
+
+.contact-card h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.contact-card p {
+  margin: 8px 0;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-card a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+.contact-card i {
+  font-size: 1.2em;
+  color: #1e90ff;
+}
+
+/* Responsive Design for Medium Screens */
+@media (max-width: 768px) {
+  .contact-card {
+    flex: 1 1 calc(50% - 20px); 
+  }
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 480px) {
+  .contact-card {
+    flex: 1 1 100%; 
+  }
 }
