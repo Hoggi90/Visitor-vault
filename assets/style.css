@@ -97,47 +97,8 @@ header {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .navbar a.icon {
-    display: block !important; 
-  }
-
-  .navbar #myLinks {
-    display: none; 
-  }
-  .nav-items a {
-    display: none;
-  }
-}
-
-
 .navbar #myLinks.show {
   display: flex; 
-}
-
-
-.banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem 0;
-  width: 100%;
-  margin-top: 60px; 
-}
-
-.banner img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.banner h1 {
-  color: white;
-  font-size: 2.5rem;
-  letter-spacing: 1.2px;
-  height: 20%;
 }
 
 .main {
@@ -149,14 +110,12 @@ header {
   max-width: 100%;
 }
 
-
 .content {
   max-width: 100%;
   margin: 0 auto; 
   padding: 20px;
   background: rgba(0, 0, 0, 0.8); 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-  color: white;
 }
 
 .content-contact {
@@ -184,6 +143,10 @@ header {
   background: linear-gradient(120deg, rgba(255, 204, 0, 0.2), rgba(0, 0, 0, 0.8));
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+  text-align: center;
+  background: url('./images/stars-background.jpg') center center no-repeat;
+  background-size: cover;
+  color: white;
 }
 
 .Vault h2 {
@@ -254,77 +217,6 @@ header {
 #visitorsList li {
   animation: fadeIn 0.5s ease-in-out;
 }
-
-@media (max-width: 768px) {
-  #map {
-    height: 400px; 
-  }
-  #visitorsList li {
-    width: 100%; 
-  }
-}
-
-
-#map {
-  width: 100%;
-  height: 600px;
-}
-
-.Vault {
-  text-align: center;
-  padding: 2rem;
-  background: url('./images/stars-background.jpg') center center no-repeat;
-  background-size: cover;
-  color: white;
-}
-
-
-.heading h1 {
-  color: #ffffff;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.5); 
-  border-radius: 10px; 
-  background: rgba(0, 0, 0, 0.8); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-  text-align: center;
-  max-width: 600px; 
-  margin-left: auto;
-  margin-right: auto; 
-}
-
-.heading h2 {
-  color: #fff;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.5); 
-  border-radius: 10px; 
-  background: rgba(0, 0, 0, 0.8); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-  text-align: center;
-  max-width: 600px; 
-  margin-left: auto; 
-  margin-right: auto;
-}
-
-.heading p {
-  color: #fff;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.5); 
-  border-radius: 10px; 
-  background: rgba(0, 0, 0, 0.8); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-  text-align: center;
-  max-width: 600px; 
-  margin-left: auto;
-  margin-right: auto; 
-}
-
 
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/vault-background.jpg') center center/cover no-repeat;
@@ -583,19 +475,6 @@ button:hover {
   color: #ccc; 
 }
 
-
-@media (max-width: 768px) {
-  .contact-card {
-    flex: 1 1 calc(50% - 20px); 
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-card {
-    flex: 1 1 100%; 
-  }
-}
-
 .about-hero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
               url('./images/about-vault.jpeg') center center/cover no-repeat;
@@ -659,3 +538,36 @@ button:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .contact-card {
+    flex: 1 1 calc(50% - 20px); 
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+    flex: 1 1 100%; 
+  }
+}
+
+@media (max-width: 768px) {
+  #map {
+    height: 400px; 
+  }
+  #visitorsList li {
+    width: 100%; 
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar a.icon {
+    display: block !important; 
+  }
+
+  .navbar #myLinks {
+    display: none; 
+  }
+  .nav-items a {
+    display: none;
+  }
+}
