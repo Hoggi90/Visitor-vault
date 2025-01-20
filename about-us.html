@@ -1,70 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - Visitor Vault</title>
   <link rel="stylesheet" href="./assets/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 </head>
+
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="./assets/images/logo1.png" alt="Logo">
-            </div>
-            <ul class="nav-items">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="results.html">The Vault</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="./assets/images/logo1.png" alt="Logo">
+      </div>
+      <div id="myLinks">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="results.html">The Vault</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+      </a>
     
-    <div class="about-hero">
-        <div class="about-hero-content">
-            <h1>About Visitor Vault</h1>
-            <p>Your Digital Passport to the World</p>
-        </div>
-    </div>
+      <ul class="nav-items">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="results.html">The Vault</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="about-container">
-        <section class="about-content">
-            <h2>Welcome to Visitor Vault</h2>
-            <p><b>Visitor Vault</b> is a unique web app that allows users from across the globe to <b>stamp</b> their name on any location they visit, creating a personalized and dynamic map of their travels. Whether you've visited a famous landmark or hidden gem, you can mark your presence, leaving a trace for others to see. All stamps are <b>securely</b> stored in a database, allowing you to revisit and track your journey over time. Explore the world through the footprints of others, discover new destinations, and share your travels with a global community. <b>Join Visitor Vault today and leave your mark on the world!</b></p>
-            
-            <h2>Explore and Inspire</h2>
-            <p>Whether you're an avid traveler or someone who loves to explore new places through the eyes of others, <b>Visitor Vault</b> offers a unique way to experience the world. Users can share their travel stories, discover new destinations, and leave a trace for others to find, all while connecting with fellow explorers.</p>
-            
-            <h2>Privacy and Security</h2>
-            <p>Our platform is designed with security and privacy in mind. Every stamp you make is safely stored in a secure database, ensuring that your journey remains yours to control and revisit whenever you wish.</p>
-            
-            <h2>Join Our Community</h2>
-            <p><b>Visitor Vault</b> isn't just about personal history—it's about sharing experiences and <b>inspiring</b> others. You can see where other users have been, get tips on your next trip, and connect with people who share your passion for travel.</p>
-        </section>
+  <div class="about-hero">
+    <div class="about-hero-content">
+      <h1>About Visitor Vault</h1>
+      <p>Your Digital Passport to the World</p>
     </div>
+  </div>
 
-    <footer class="footer">
-        <div class="footer-container">
-          <div class="footer-logo">
-            <img src="./assets/images/logo1.png" alt="Visitor Vault Logo" />
-          </div>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about-us.html">About Us</a>
-            <a href="results.html">The Vault</a>
-            <a href="contact.html">Contact Us</a>
-          </div>
-          <div class="footer-social">
-            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 Visitor Vault. All rights reserved.</p>
-        </div>
-      </footer>
+  <div class="about-container">
+    <section class="about-content">
+      <h2>Welcome to Visitor Vault</h2>
+      <p><b>Visitor Vault</b> is a unique web app that allows users from across the globe to <b>stamp</b> their name on
+        any location they visit, creating a personalized and dynamic map of their travels. Whether you've visited a
+        famous landmark or hidden gem, you can mark your presence, leaving a trace for others to see. All stamps are
+        <b>securely</b> stored in a database, allowing you to revisit and track your journey over time. Explore the
+        world through the footprints of others, discover new destinations, and share your travels with a global
+        community. <b>Join Visitor Vault today and leave your mark on the world!</b>
+      </p>
+
+      <h2>Explore and Inspire</h2>
+      <p>Whether you're an avid traveler or someone who loves to explore new places through the eyes of others,
+        <b>Visitor Vault</b> offers a unique way to experience the world. Users can share their travel stories, discover
+        new destinations, and leave a trace for others to find, all while connecting with fellow explorers.
+      </p>
+
+      <h2>Privacy and Security</h2>
+      <p>Our platform is designed with security and privacy in mind. Every stamp you make is safely stored in a secure
+        database, ensuring that your journey remains yours to control and revisit whenever you wish.</p>
+
+      <h2>Join Our Community</h2>
+      <p><b>Visitor Vault</b> isn't just about personal history—it's about sharing experiences and <b>inspiring</b>
+        others. You can see where other users have been, get tips on your next trip, and connect with people who share
+        your passion for travel.</p>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="./assets/images/logo1.png" alt="Visitor Vault Logo" />
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="results.html">The Vault</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Visitor Vault. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="./assets/script.js"></script>
 </body>
+
 </html>

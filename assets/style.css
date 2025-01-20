@@ -1,22 +1,20 @@
-* Visitor Vault Styling */
 
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
   color: #333;
   padding: 0;
   margin: 0;
-  padding-top: 90px;
+  padding-top: 45px;
+  height: 100%; 
 }
 
-/* Navbar styling */
 header {
   background-color: black;
   padding: 15px 0;
@@ -50,7 +48,7 @@ header {
 
 .nav-items a {
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: 18px;
   padding: 10px;
@@ -62,13 +60,69 @@ header {
   border-radius: 5px;
 }
 
+
+.navbar #myLinks {
+  display: none; 
+  flex-direction: column;
+  width: 100%; 
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 999;
+}
+
+.navbar #myLinks a {
+  padding: 12px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  border-bottom: 1px solid #333; 
+  display: block;
+}
+
+.icon {
+  display: none;
+  position: absolute;
+  right: 50px;
+}
+
+.navbar #myLinks a:hover {
+  background-color: #444;
+}
+
+.navbar a.icon {
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar a.icon {
+    display: block !important; 
+  }
+
+  .navbar #myLinks {
+    display: none; 
+  }
+  .nav-items a {
+    display: none;
+  }
+}
+
+
+.navbar #myLinks.show {
+  display: flex; 
+}
+
+
 .banner {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem 0;
   width: 100%;
-  margin-top: 60px; /* Prevents overlapping with fixed navbar */
+  margin-top: 60px; 
 }
 
 .banner img {
@@ -90,92 +144,123 @@ header {
   text-align: center;
   background-size: cover;
   color: white;
-  height: 1000px;
+  height: 100%;
   position: relative;
   max-width: 100%;
 }
 
-/* General Page Layout */
+
 .content {
   max-width: 100%;
-  margin: 0 auto; /* Center the content */
+  margin: 0 auto; 
   padding: 20px;
-  background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
+  background: rgba(0, 0, 0, 0.8); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
   color: white;
 }
 
-/* Map Styling */
-#map {
-  width: 100%;
-  height: 600px; /* Adjust height */
-  border-radius: 10px; /* Rounded corners */
-  margin-bottom: 20px; /* Spacing below the map */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+.content-contact {
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto; 
+  padding: 20px;
+  background: url(./images/stars-background.jpg);
+  color: white;
 }
 
-/* Vault Section Styling */
+
+#map {
+  width: 100%;
+  height: 600px; 
+  border-radius: 10px; 
+  margin-bottom: 20px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+}
+
 .Vault {
   text-align: center;
   margin-top: 20px;
-  padding: 20px;
+  padding: 40px 20px;
+  background: linear-gradient(120deg, rgba(255, 204, 0, 0.2), rgba(0, 0, 0, 0.8));
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
 }
 
 .Vault h2 {
-  font-size: 2rem;
-  color: #ffcc00; /* Gold color for heading */
-  margin-bottom: 10px;
+  font-size: 2.5rem;
+  color: #ffcc00;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .Vault p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  color: #fff;
+  opacity: 0.9; 
+  line-height: 1.6;
 }
 
 #visitorsList {
-  list-style: none; /* Remove bullet points */
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 20px;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-  gap: 20px; /* Add spacing between list items */
-  justify-content: center; /* Center the list */
+  list-style: none; 
 }
 
 #visitorsList li {
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  color: white; /* White text */
-  padding: 15px;
-  border-radius: 8px;
-  width: 250px; /* Fixed width for uniformity */
-  text-align: left;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  background: rgba(0, 0, 0, 0.7); 
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 #visitorsList li:hover {
-  background: rgba(255, 204, 0, 0.8); /* Gold background on hover */
-  color: black; /* Black text on hover */
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transform: translateY(-10px); 
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5); 
+  background: rgba(255, 204, 0, 0.8); 
+  color: black;
 }
 
-/* Visitor Item Content */
 #visitorsList li h3 {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #ffcc00; 
 }
 
 #visitorsList li p {
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.6;
+  color: #ddd; 
+  margin: 0;
 }
 
-/* Responsive Design for Smaller Screens */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#visitorsList li {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
 @media (max-width: 768px) {
   #map {
-    height: 400px; /* Reduce map height */
+    height: 400px; 
   }
   #visitorsList li {
-    width: 100%; /* Full width on smaller screens */
+    width: 100%; 
   }
 }
 
@@ -185,7 +270,6 @@ header {
   height: 600px;
 }
 
-/* AFRIKA USE THIS PART FOR THE ACTUAL VAULT PAGE- YOU CAN CHANGE BACKGROUND */
 .Vault {
   text-align: center;
   padding: 2rem;
@@ -194,37 +278,35 @@ header {
   color: white;
 }
 
-/* Heading styles */
-/* About Us & Contact Us Pages */
+
 .heading h1 {
   color: #ffffff;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+  border: 2px solid rgba(255, 255, 255, 0.5); 
   border-radius: 10px; 
   background: rgba(0, 0, 0, 0.8); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Same shadow effect as the form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
   text-align: center;
   max-width: 600px; 
-  margin-left: auto; /* Center align */
-  margin-right: auto; /* Center align */
+  margin-left: auto;
+  margin-right: auto; 
 }
 
-/* "Visitor Vault: Your digital passport to the world" -HOME PAGE */
 .heading h2 {
   color: #fff;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+  border: 2px solid rgba(255, 255, 255, 0.5); 
   border-radius: 10px; 
   background: rgba(0, 0, 0, 0.8); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Same shadow effect as the form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
   text-align: center;
   max-width: 600px; 
-  margin-left: auto; /* Center align */
-  margin-right: auto; /* Center align */
+  margin-left: auto; 
+  margin-right: auto;
 }
 
 .heading p {
@@ -240,13 +322,12 @@ header {
   text-align: center;
   max-width: 600px; 
   margin-left: auto;
-  margin-right: auto; /* Center align */
+  margin-right: auto; 
 }
 
 
-/* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('./images/vault-background.jpg') center center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/vault-background.jpg') center center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 100px 20px;
@@ -277,7 +358,6 @@ header {
   background-color: #ffe680;
 }
 
-/* Features Section */
 .features {
   padding: 50px 20px;
   text-align: center;
@@ -316,22 +396,21 @@ header {
   font-size: 1rem;
 }
 
-/* Form Styling */
 form {
-  background: rgba(0, 0, 0, 0.6); /* Dark background */
-  padding: 50px; /* Spacing inside the form */
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Softer shadow */
-  max-width: 800px; /* Limit form width */
-  margin: auto; /* Center horizontally */
-  text-align: left; /* Align text for readability */
-  box-sizing: border-box; /* Ensure padding doesn't exceed form width */
+  background: rgba(0, 0, 0, 0.6); 
+  padding: 50px;
+  border-radius: 15px; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); 
+  max-width: 800px; 
+  margin: auto; 
+  text-align: left;
+  box-sizing: border-box; 
 }
 
 .form-group {
-  width: 100%; /* Ensure the form group doesn't overflow */
-  margin-bottom: 3rem; /* Space between input fields */
-  box-sizing: border-box; /* Include padding and borders in width */
+  width: 100%; 
+  margin-bottom: 3rem; 
+  box-sizing: border-box;
 }
 
 #visitorForm h3 {
@@ -341,39 +420,39 @@ form {
 }
 
 input {
-  width: 100%; /* Make inputs span the full width of their parent */
-  padding: 15px; /* Add padding for readability */
-  margin: 0; /* Remove default margin */
-  border: 1px solid #ddd; /* Subtle border */
-  border-radius: 8px; /* Rounded corners */
-  background: #fff; /* White background for inputs */
-  color: #333; /* Dark text color */
+  width: 100%; 
+  padding: 15px; 
+  margin: 0; 
+  border: 1px solid #ddd;
+  border-radius: 8px; 
+  background: #fff;
+  color: #333; 
   font-size: 1rem;
-  box-sizing: border-box; /* Include padding and borders in width */
+  box-sizing: border-box; 
 }
 
 input:focus {
-  border-color: #ffcc00; /* Highlight input on focus */
-  outline: none; /* Remove default outline */
-  box-shadow: 0 0 5px rgba(255, 204, 0, 0.8); /* Glow effect */
+  border-color: #ffcc00; 
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.8); 
 }
 
 button {
-  width: 100%; /* Full width button */
-  padding: 15px; /* Comfortable padding */
-  background: #ffcc00; /* Gold button */
-  color: black; /* Black text for contrast */
+  width: 100%; 
+  padding: 15px; 
+  background: #ffcc00; 
+  color: black;
   font-weight: bold;
   font-size: 1rem;
   border: none;
-  border-radius: 8px; /* Rounded button */
+  border-radius: 8px; 
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.2s;
 }
 
 button:hover {
-  background: #ffe680; /* Lighter gold on hover */
-  transform: scale(1.05); /* Slightly enlarge button */
+  background: #ffe680; 
+  transform: scale(1.05); 
 }
 
 
@@ -443,43 +522,43 @@ button:hover {
 }
 
 .footer {
-  background-color: black; /* Black background */
-  color: white; /* White text */
-  padding: 40px 0; /* Spacing inside the footer */
+  background-color: black; 
+  color: white; 
+  padding: 40px 0; 
   text-align: center;
-  width: 100%; /* Ensure the footer spans the full width */
-  margin: 0; /* Remove any default margin */
-  position: relative; /* Ensure proper stacking */
-  box-sizing: border-box; /* Include padding in the width */
+  width: 100%; 
+  margin: 0;
+  position: relative; 
+  box-sizing: border-box; 
 }
 
 .footer-container {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Ensure the container takes full width of the footer */
-  max-width: 1200px; /* Center content with max-width */
-  margin: 0 auto; /* Center the container's content */
-  padding: 0 20px; /* Add side padding to align content inside the container */
+  width: 100%; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px;
 }
 
 .footer-links {
   display: flex;
-  flex-wrap: wrap; /* Wrap links if needed */
+  flex-wrap: wrap; 
   justify-content: center;
-  gap: 15px; /* Spacing between links */
+  gap: 15px; 
 }
 
 .footer-links a {
   text-decoration: none;
-  color: #ffcc00; /* Gold color for links */
+  color: #ffcc00; 
   font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
 .footer-links a:hover {
-  color: #ffe680; /* Lighter gold on hover */
+  color: #ffe680; 
 }
 
 .footer-social {
@@ -489,37 +568,34 @@ button:hover {
 }
 
 .footer-social a {
-  color: white; /* White icons */
-  font-size: 1.5rem; /* Larger icon size */
+  color: white; 
+  font-size: 1.5rem;
   transition: color 0.3s ease-in-out;
 }
 
 .footer-social a:hover {
-  color: #ffcc00; /* Gold icon on hover */
+  color: #ffcc00; 
 }
 
 .footer-bottom {
   margin-top: 20px;
-  font-size: 0.9rem; /* Smaller text */
-  color: #ccc; /* Light gray text */
+  font-size: 0.9rem;
+  color: #ccc; 
 }
 
 
-/* Responsive Design for Medium Screens */
 @media (max-width: 768px) {
   .contact-card {
     flex: 1 1 calc(50% - 20px); 
   }
 }
 
-/* Responsive Design for Small Screens */
 @media (max-width: 480px) {
   .contact-card {
     flex: 1 1 100%; 
   }
 }
 
-/* About Page Hero Section */
 .about-hero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
               url('./images/about-vault.jpeg') center center/cover no-repeat;
@@ -540,7 +616,6 @@ button:hover {
   margin: 0;
 }
 
-/* About Page Content Container */
 .about-container {
   background: url(./images/stars-background.jpg);
   padding: 40px 20px;
@@ -557,7 +632,7 @@ button:hover {
 }
 
 .about-content h2 {
-  color: #ffcc00; /* Gold headings */
+  color: #ffcc00; 
   font-size: 2rem;
   margin-bottom: 15px;
 }
@@ -569,10 +644,9 @@ button:hover {
 }
 
 .about-content p b {
-  color: #ffcc00; /* Highlight important text in gold */
+  color: #ffcc00; 
 }
 
-/* Media Query for Responsive Design */
 @media (max-width: 768px) {
   .about-hero h1 {
     font-size: 2.5rem;
@@ -584,3 +658,4 @@ button:hover {
     padding: 20px;
   }
 }
+

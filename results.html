@@ -2,45 +2,81 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
-    <link rel="stylesheet" href="./assets/style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="./assets/images/logo1.png" alt="Logo">
-              </div>
-            <ul class="nav-items">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="results.html">The Vault</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="./assets/images/logo1.png" alt="Logo">
+      </div>
+      <div id="myLinks">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="results.html">The Vault</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <ul class="nav-items">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="results.html">The Vault</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="content">
+  <div class="content">
     <!-- Map container -->
-<div id="map"></div> <!-- Added map container -->
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <div id="map"></div> <!-- Added map container -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-<div class="Vault">
-    <h2>Visitor Vault - The Vault</h2>
-    <p>See where other visitors have left their mark!</p>
-    <ul id="visitorsList">
+    <div class="Vault">
+      <h2>Visitor Vault - The Vault</h2>
+      <p>See where other visitors have left their mark!</p>
+      <ul id="visitorsList">
         <!-- Visitor data will be inserted here -->
-    </ul>
-</div>
+      </ul>
+    </div>
 
-</div>
-<script src ="./assets/map.js"></script>
-<script src="./assets/results.js"></script>
- 
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="./assets/images/logo1.png" alt="Visitor Vault Logo" />
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="results.html">The Vault</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Visitor Vault. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./assets/map.js"></script>
+  <script src="./assets/results.js"></script>
+  <script src="./assets/script.js"></script>
+
 </body>
 
 </html>

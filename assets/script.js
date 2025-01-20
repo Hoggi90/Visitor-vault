@@ -25,3 +25,13 @@ document.getElementById("visitorForm").addEventListener("submit", async function
         alert("An unexpected error occurred. Please try again later.");
     }
 });
+
+function toggleMenu() {
+    var links = document.getElementById("myLinks");
+    if (links.classList.contains("show")) {
+      links.classList.remove("show"); // Hide menu
+    } else {
+      links.classList.add("show"); // Show menu
+    }
+  }
+  
