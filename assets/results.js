@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             if (visitorsList) {
                 data.visitors.forEach(visitor => {
                     const listItem = document.createElement("li");
-                    listItem.textContent = `${visitor.name} from ${visitor.location} visited The Vault`;
+                    listItem.innerHTML = `<b style="color: gold;">${visitor.name}</b> from <b style="color: gold;">${visitor.location}</b> visited The Vault`;
                     visitorsList.appendChild(listItem);
                 });
             }
