@@ -2,4 +2,5 @@
 terraform/.terraform/
 terraform/.terraform.lock.hcl
 terraform/terraform.tfstate*
+.env
 
